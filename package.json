@@ -1,0 +1,81 @@
+{
+    "name": "@tailcove/node",
+    "version": "0.1.0",
+    "description": "Node.js client for shipping application logs to Tailcove — batches, ships NDJSON, with pino and winston transports.",
+    "license": "MIT",
+    "type": "module",
+    "keywords": ["logging", "tailcove", "pino", "winston", "ndjson", "monolog"],
+    "engines": {
+        "node": ">=18"
+    },
+    "files": ["dist"],
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            },
+            "require": {
+                "types": "./dist/index.d.cts",
+                "default": "./dist/index.cjs"
+            }
+        },
+        "./pino": {
+            "import": {
+                "types": "./dist/pino.d.ts",
+                "default": "./dist/pino.js"
+            },
+            "require": {
+                "types": "./dist/pino.d.cts",
+                "default": "./dist/pino.cjs"
+            }
+        },
+        "./winston": {
+            "import": {
+                "types": "./dist/winston.d.ts",
+                "default": "./dist/winston.js"
+            },
+            "require": {
+                "types": "./dist/winston.d.cts",
+                "default": "./dist/winston.cjs"
+            }
+        }
+    },
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "typecheck": "tsc --noEmit"
+    },
+    "peerDependencies": {
+        "pino": ">=8",
+        "winston": ">=3"
+    },
+    "peerDependenciesMeta": {
+        "pino": {
+            "optional": true
+        },
+        "winston": {
+            "optional": true
+        }
+    },
+    "dependencies": {
+        "pino-abstract-transport": "^2.0.0",
+        "winston-transport": "^4.9.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.5",
+        "pino": "^9.6.0",
+        "tsup": "^8.3.5",
+        "typescript": "^5.7.2",
+        "vitest": "^3.0.0",
+        "winston": "^3.17.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
