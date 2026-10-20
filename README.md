@@ -1,10 +1,33 @@
-# @tailcove/node
+<h1 align="center">@tailcove/node</h1>
 
-Node.js client for shipping application logs to
-[Tailcove](https://tailcove.dev). Batches up to 50 lines (or 2 seconds,
-whichever comes first) and ships them as NDJSON over `fetch`. A delivery
-failure never throws into your application — it's dropped silently unless
-you pass `onError`.
+<p align="center">
+  Send logs from Node.js to <a href="https://tailcove.dev">Tailcove</a> in two lines of code.<br>
+  Batched, non-blocking, and it never throws into your app.
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/@tailcove/node"><img alt="npm version" src="https://img.shields.io/npm/v/@tailcove/node?color=2DD4BF&labelColor=0A0A0A"></a>
+  <a href="https://www.npmjs.com/package/@tailcove/node"><img alt="npm downloads" src="https://img.shields.io/npm/dm/@tailcove/node?color=2DD4BF&labelColor=0A0A0A"></a>
+  <img alt="Node.js 18+" src="https://img.shields.io/node/v/@tailcove/node?color=2DD4BF&labelColor=0A0A0A">
+  <img alt="Types included" src="https://img.shields.io/badge/types-included-2DD4BF?labelColor=0A0A0A">
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-2DD4BF?labelColor=0A0A0A"></a>
+</p>
+
+<p align="center">
+  <a href="https://tailcove.dev/docs/sending-logs/node">Documentation</a> ·
+  <a href="https://github.com/tailcove/node/issues">Report a bug</a> ·
+  <a href="https://app.tailcove.dev/register">Get started free</a>
+</p>
+
+---
+
+## Why use it
+
+- **Fast.** Lines are buffered and sent in batches of 50, or every 2 seconds. Your code never waits on the network.
+- **Safe.** A failed delivery is caught and dropped. Logging will never be the reason your app crashes.
+- **Lightweight.** Delivery uses the built-in `fetch`. The only dependencies are two tiny helpers for the pino and winston transports.
+- **Fits what you already use.** Works on its own, or as a transport for [pino](#pino) or [winston](#winston).
+- **Typed.** Written in TypeScript, with ESM and CommonJS builds.
 
 ## Install
 
@@ -12,68 +35,54 @@ you pass `onError`.
 npm install @tailcove/node
 ```
 
-## Quickstart
+Requires Node.js 18 or newer.
+
+## Quick start
+
+**1. Get a token.** Create a source in your [Tailcove dashboard](https://app.tailcove.dev) and copy its ingest token. It is shown only once, so save it somewhere safe (an environment variable is ideal).
+
+**2. Send your first log.**
 
 ```ts
 import { Tailcove } from '@tailcove/node';
 
-const tailcove = new Tailcove({
-    token: process.env.TAILCOVE_TOKEN!,
-    endpoint: process.env.TAILCOVE_ENDPOINT, // defaults to https://ingest.tailcove.dev/api/v1/logs
-});
+const tailcove = new Tailcove({ token: process.env.TAILCOVE_TOKEN! });
 
 tailcove.info('user signed up', { userId: 42 });
 tailcove.error('payment failed', { orderId: 99, reason: 'card_declined' });
-
-// Optional: block until the current batch is sent, e.g. before a short-lived
-// script exits. Long-running processes don't need this — beforeExit/SIGTERM
-// flush automatically (see "Shutdown" below).
-await tailcove.flush();
 ```
 
-Level helpers: `debug`, `info`, `notice`, `warning`, `error`, `critical`,
-`alert`, `emergency` — or call `log(level, message, context)` directly.
+**3. Open Tailcove.** Your lines appear in search and live tail within a couple of seconds.
+
+Level helpers are `debug`, `info`, `notice`, `warning`, `error`, `critical`, `alert` and `emergency`. You can also call `log(level, message, context)` directly.
+
+> **Short-lived scripts:** a script that exits right after logging can call `await tailcove.flush()` to send what is buffered. Long-running servers do not need this. See [Shutdown](#shutdown).
 
 ## Options
 
-| Option | Default | Purpose |
+| Option | Default | What it does |
 |---|---|---|
-| `token` | — | The source's ingest token. Required. |
-| `endpoint` | `https://ingest.tailcove.dev/api/v1/logs` | Your source's ingest URL. |
-| `batchSize` | `50` | Flush once this many lines are buffered. |
-| `batchIntervalMs` | `2000` | Flush once this many milliseconds have passed since the first buffered line, whichever comes first. |
-| `timeoutMs` | `2000` | Milliseconds before a delivery attempt gives up. |
-| `context` | `{}` | Merged into every line's context, underneath the per-call context. |
-| `enabled` | `true` | Set `false` to keep the client silent — nothing is buffered or sent. |
-| `onError` | — | Called with the error when a batch fails to send. Omit to drop failures silently. |
-| `flushOnShutdown` | `true` | Set `false` to opt out of the automatic `beforeExit`/`SIGTERM` flush and call `flush()`/`shutdown()` yourself. |
+| `token` | — | Your source's ingest token. **Required.** |
+| `endpoint` | `https://ingest.tailcove.dev/api/v1/logs` | The ingest URL. Only change this if you self-host. |
+| `batchSize` | `50` | Send once this many lines are buffered. |
+| `batchIntervalMs` | `2000` | Send once this many milliseconds have passed since the first buffered line. |
+| `timeoutMs` | `2000` | How long a delivery attempt may take before giving up. |
+| `context` | `{}` | Fields added to every line. Per-call context wins if keys clash. |
+| `enabled` | `true` | Set `false` to turn the client off. Nothing is buffered or sent. |
+| `onError` | — | Called with the error when a batch fails to send. Without it, failures are dropped silently. |
+| `flushOnShutdown` | `true` | Flush automatically on `beforeExit` and `SIGTERM`. Set `false` to handle shutdown yourself. |
 
-## Context enrichment
+## What gets added automatically
 
-Every line automatically gets, without any code changes on your end:
+Every line is enriched with:
 
-- `hostname` — `os.hostname()`
-- `pid` — `process.pid`
-- `env` — `process.env.NODE_ENV` (defaults to `development`)
+| Field | Value |
+|---|---|
+| `hostname` | `os.hostname()` |
+| `pid` | `process.pid` |
+| `env` | `process.env.NODE_ENV` (defaults to `development`) |
 
-Pass `context` in the constructor to merge additional fields (e.g. `service`,
-`region`) onto every line; per-call context passed to `log()`/`info()`/etc.
-wins on key collision.
-
-## Shutdown
-
-A Node process is long-lived, so `batchIntervalMs` is enforced with a real
-timer rather than a lazy check on the next log call — the latency bound
-holds even if nothing else triggers a flush. On top of that,
-`flushOnShutdown` (on by default) flushes any buffered lines automatically
-on `beforeExit` and `SIGTERM`, so a partial batch is never silently lost
-when the process exits.
-
-If you'd rather manage shutdown yourself (e.g. you already have your own
-signal handling), construct with `flushOnShutdown: false` and call
-`await tailcove.flush()` — or `await tailcove.shutdown()`, which flushes and
-also unsubscribes the client from the shared shutdown listeners — at the
-point in your own shutdown sequence where you're ready.
+Add your own fields to every line with the `context` option, for example `service` or `region`.
 
 ## Pino
 
@@ -83,19 +92,14 @@ import pino from 'pino';
 const logger = pino({
     transport: {
         target: '@tailcove/node/pino',
-        options: {
-            token: process.env.TAILCOVE_TOKEN,
-        },
+        options: { token: process.env.TAILCOVE_TOKEN },
     },
 });
 
 logger.error({ orderId: 99 }, 'payment failed');
 ```
 
-Runs in pino's worker thread and owns its own `Tailcove` client. Pino's
-numeric levels are mapped onto Tailcove's syslog-style set: `trace`/`debug`
-→ `debug`, `info` → `info`, `warn` → `warning`, `error` → `error`, `fatal` →
-`critical`.
+The transport runs in pino's worker thread and keeps your existing logger. Pino levels map as: `trace` and `debug` → `debug`, `info` → `info`, `warn` → `warning`, `error` → `error`, `fatal` → `critical`.
 
 ## Winston
 
@@ -104,42 +108,41 @@ import winston from 'winston';
 import { TailcoveTransport } from '@tailcove/node/winston';
 
 const logger = winston.createLogger({
-    transports: [
-        new TailcoveTransport({ token: process.env.TAILCOVE_TOKEN }),
-    ],
+    transports: [new TailcoveTransport({ token: process.env.TAILCOVE_TOKEN })],
 });
 
 logger.warn('disk almost full', { volume: '/data' });
 ```
 
-Winston's default npm levels are mapped as: `error` → `error`, `warn` →
-`warning`, `info`/`http` → `info`, `verbose`/`debug`/`silly` → `debug`.
+Winston levels map as: `error` → `error`, `warn` → `warning`, `info` and `http` → `info`, `verbose`, `debug` and `silly` → `debug`.
 
-## Failure handling
+## Shutdown
 
-A delivery failure — a network error or a non-2xx response — never throws
-into your application. It's caught, handed to `onError` if you provided one,
-and otherwise dropped. Logging is best-effort by design; it should never be
-the reason your app crashes.
+A real timer enforces `batchIntervalMs`, so lines are sent on time even when nothing else is logging. When the process ends, `beforeExit` and `SIGTERM` flush whatever is left, so a partial batch is not lost.
 
-## Publishing (maintainers only)
+If you already manage your own shutdown, create the client with `flushOnShutdown: false`, then call `await tailcove.flush()`, or `await tailcove.shutdown()` to flush and detach, at the right point in your sequence.
 
-This package ships from `packages/tailcove/node` under the `@tailcove` npm
-org. It is **not** wired into this repo's own `package.json` or CI — it's
-built and published by hand:
+## When delivery fails
 
-```bash
-cd packages/tailcove/node
-npm install
-npm run typecheck
-npm test
-npm run build
+Network errors and non-2xx responses never throw into your code. They are passed to `onError` if you set one, and dropped otherwise. Logging is best-effort by design.
 
-npm version patch   # or minor / major
-npm publish --access public
+```ts
+const tailcove = new Tailcove({
+    token: process.env.TAILCOVE_TOKEN!,
+    onError: (error) => console.warn('Tailcove delivery failed', error),
+});
 ```
 
-`npm publish` requires being logged in (`npm login`) as a member of the
-`@tailcove` org. `--access public` is required the first time a new scoped
-package is published under a free org; harmless to keep passing on every
-release.
+## Help and feedback
+
+- **Docs:** [tailcove.dev/docs/sending-logs/node](https://tailcove.dev/docs/sending-logs/node)
+- **Bugs and feature requests:** [open an issue](https://github.com/tailcove/node/issues/new/choose)
+- **Security problems:** please email **security@tailcove.dev** instead of opening a public issue.
+
+## Other Tailcove libraries
+
+[Laravel](https://github.com/tailcove/laravel) · [Python](https://github.com/tailcove/python) · [Browser](https://github.com/tailcove/browser)
+
+## License
+
+[MIT](LICENSE) © Akcybex
