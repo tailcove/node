@@ -12,7 +12,6 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@tailcove/node"><img alt="npm version" src="https://img.shields.io/npm/v/@tailcove/node?label=%40tailcove%2Fnode&color=2DD4BF&labelColor=0A0A0A"></a>
-  <a href="https://www.npmjs.com/package/@tailcove/node"><img alt="npm downloads" src="https://img.shields.io/npm/dm/@tailcove/node?color=2DD4BF&labelColor=0A0A0A"></a>
   <img alt="Node.js 18+" src="https://img.shields.io/node/v/@tailcove/node?color=2DD4BF&labelColor=0A0A0A">
   <img alt="Types included" src="https://img.shields.io/badge/types-included-2DD4BF?labelColor=0A0A0A">
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-2DD4BF?labelColor=0A0A0A"></a>
@@ -24,36 +23,11 @@
 
 <br>
 
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <h4>⚡ &nbsp;Fast</h4>
-      Lines are batched, 50 at a time or every 2 seconds. Your code never waits on the network.
-    </td>
-    <td width="33%" valign="top">
-      <h4>🛡️ &nbsp;Safe</h4>
-      A failed delivery is caught and dropped. Logging will never be the reason your app crashes.
-    </td>
-    <td width="33%" valign="top">
-      <h4>🪶 &nbsp;Lightweight</h4>
-      Delivery uses the built-in <code>fetch</code>. Only two tiny helpers for the transports.
-    </td>
-  </tr>
-  <tr>
-    <td width="33%" valign="top">
-      <h4>🔌 &nbsp;Pino &amp; Winston</h4>
-      Drop in as a transport and keep the logger you already use.
-    </td>
-    <td width="33%" valign="top">
-      <h4>🏷️ &nbsp;Context for free</h4>
-      Hostname, process ID and environment are added to every line automatically.
-    </td>
-    <td width="33%" valign="top">
-      <h4>🟦 &nbsp;Typed</h4>
-      Written in TypeScript, with ESM and CommonJS builds.
-    </td>
-  </tr>
-</table>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/features-node-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/features-node-light.svg">
+  <img alt="@tailcove/node features" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/features-node-dark.svg" width="100%">
+</picture>
 
 <br>
 
@@ -167,16 +141,21 @@ const tailcove = new Tailcove({
 - **Bugs and feature requests:** [open an issue](https://github.com/tailcove/node/issues/new/choose)
 - **Security problems:** please email **security@tailcove.dev** instead of opening a public issue.
 
-## Other Tailcove libraries
-
-[Laravel](https://github.com/tailcove/laravel) · [Python](https://github.com/tailcove/python) · [Browser](https://github.com/tailcove/browser)
-
-## License
-
-[MIT](LICENSE) © AKCybex
-
 <br>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/footer-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/footer-light.svg">
+  <img alt="Tailcove. Built by AKCybex." src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/footer-dark.svg" width="100%">
+</picture>
+
 <p align="center">
-  <sub>Built by <a href="https://akcybex.com">AKCybex</a> &nbsp;·&nbsp; <a href="https://tailcove.dev">tailcove.dev</a></sub>
+  <a href="https://tailcove.dev/docs/sending-logs/node">Documentation</a> &nbsp;·&nbsp;
+  <a href="https://app.tailcove.dev/register">Get started free</a> &nbsp;·&nbsp;
+  <a href="https://github.com/tailcove/node/issues/new/choose">Report a bug</a> &nbsp;·&nbsp;
+  <a href="LICENSE">MIT License</a>
+</p>
+
+<p align="center">
+  <sub>More Tailcove libraries: <a href="https://github.com/tailcove/laravel">Laravel</a> &nbsp;·&nbsp; <a href="https://github.com/tailcove/python">Python</a> &nbsp;·&nbsp; <a href="https://github.com/tailcove/browser">Browser</a></sub>
 </p>
