@@ -1,6 +1,6 @@
 {
     "name": "@tailcove/node",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Node.js client for shipping application logs to Tailcove — batches, ships NDJSON, with pino and winston transports.",
     "license": "MIT",
     "repository": {
@@ -8,11 +8,20 @@
         "url": "git+https://github.com/tailcove/node.git"
     },
     "type": "module",
-    "keywords": ["logging", "tailcove", "pino", "winston", "ndjson", "monolog"],
+    "keywords": [
+        "logging",
+        "tailcove",
+        "pino",
+        "winston",
+        "ndjson",
+        "monolog"
+    ],
     "engines": {
         "node": ">=18"
     },
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "main": "./dist/index.cjs",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
