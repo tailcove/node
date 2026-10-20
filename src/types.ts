@@ -34,7 +34,7 @@ export interface LogLine {
 export interface TailcoveOptions {
     /** The source's ingest token. */
     token: string;
-    /** Defaults to `https://ingest.tailcove.com/api/v1/logs`. */
+    /** Defaults to `https://ingest.tailcove.dev/api/v1/logs`. */
     endpoint?: string;
     /** Flush once this many records are buffered. Defaults to 50. */
     batchSize?: number;

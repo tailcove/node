@@ -1,7 +1,7 @@
 # @tailcove/node
 
 Node.js client for shipping application logs to
-[Tailcove](https://tailcove.com). Batches up to 50 lines (or 2 seconds,
+[Tailcove](https://tailcove.dev). Batches up to 50 lines (or 2 seconds,
 whichever comes first) and ships them as NDJSON over `fetch`. A delivery
 failure never throws into your application — it's dropped silently unless
 you pass `onError`.
@@ -19,7 +19,7 @@ import { Tailcove } from '@tailcove/node';
 
 const tailcove = new Tailcove({
     token: process.env.TAILCOVE_TOKEN!,
-    endpoint: process.env.TAILCOVE_ENDPOINT, // defaults to https://ingest.tailcove.com/api/v1/logs
+    endpoint: process.env.TAILCOVE_ENDPOINT, // defaults to https://ingest.tailcove.dev/api/v1/logs
 });
 
 tailcove.info('user signed up', { userId: 42 });
@@ -39,7 +39,7 @@ Level helpers: `debug`, `info`, `notice`, `warning`, `error`, `critical`,
 | Option | Default | Purpose |
 |---|---|---|
 | `token` | — | The source's ingest token. Required. |
-| `endpoint` | `https://ingest.tailcove.com/api/v1/logs` | Your source's ingest URL. |
+| `endpoint` | `https://ingest.tailcove.dev/api/v1/logs` | Your source's ingest URL. |
 | `batchSize` | `50` | Flush once this many lines are buffered. |
 | `batchIntervalMs` | `2000` | Flush once this many milliseconds have passed since the first buffered line, whichever comes first. |
 | `timeoutMs` | `2000` | Milliseconds before a delivery attempt gives up. |
