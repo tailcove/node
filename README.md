@@ -16,9 +16,9 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/meta-node-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/meta-node-light.svg">
-    <img alt="@tailcove/node facts" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/meta-node-dark.svg" height="34">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/stats-node-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/stats-node-light.svg">
+    <img alt="@tailcove/node at a glance" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/stats-node-dark.svg">
   </picture>
 </p>
 
