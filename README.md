@@ -1,33 +1,61 @@
-<h1 align="center">@tailcove/node</h1>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-light.svg">
+  <img alt="@tailcove/node: Tailcove for Node.js" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-dark.svg" width="100%">
+</picture>
 
 <p align="center">
-  Send logs from Node.js to <a href="https://tailcove.dev">Tailcove</a> in two lines of code.<br>
-  Batched, non-blocking, and it never throws into your app.
+  <a href="https://tailcove.dev/docs/sending-logs/node"><img alt="Documentation" src="https://img.shields.io/badge/Documentation-2DD4BF?style=for-the-badge&logoColor=0A0A0A"></a>
+  <a href="https://app.tailcove.dev/register"><img alt="Get started free" src="https://img.shields.io/badge/Get%20started%20free-0A0A0A?style=for-the-badge"></a>
+  <a href="https://github.com/tailcove/node/issues/new/choose"><img alt="Report a bug" src="https://img.shields.io/badge/Report%20a%20bug-0A0A0A?style=for-the-badge"></a>
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@tailcove/node"><img alt="npm version" src="https://img.shields.io/npm/v/@tailcove/node?color=2DD4BF&labelColor=0A0A0A"></a>
+  <a href="https://www.npmjs.com/package/@tailcove/node"><img alt="npm version" src="https://img.shields.io/npm/v/@tailcove/node?label=%40tailcove%2Fnode&color=2DD4BF&labelColor=0A0A0A"></a>
   <a href="https://www.npmjs.com/package/@tailcove/node"><img alt="npm downloads" src="https://img.shields.io/npm/dm/@tailcove/node?color=2DD4BF&labelColor=0A0A0A"></a>
   <img alt="Node.js 18+" src="https://img.shields.io/node/v/@tailcove/node?color=2DD4BF&labelColor=0A0A0A">
   <img alt="Types included" src="https://img.shields.io/badge/types-included-2DD4BF?labelColor=0A0A0A">
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-2DD4BF?labelColor=0A0A0A"></a>
 </p>
 
-<p align="center">
-  <a href="https://tailcove.dev/docs/sending-logs/node">Documentation</a> ·
-  <a href="https://github.com/tailcove/node/issues">Report a bug</a> ·
-  <a href="https://app.tailcove.dev/register">Get started free</a>
-</p>
+<br>
 
----
+<h3 align="center">Send logs from Node.js to Tailcove in two lines of code.</h3>
 
-## Why use it
+<br>
 
-- **Fast.** Lines are buffered and sent in batches of 50, or every 2 seconds. Your code never waits on the network.
-- **Safe.** A failed delivery is caught and dropped. Logging will never be the reason your app crashes.
-- **Lightweight.** Delivery uses the built-in `fetch`. The only dependencies are two tiny helpers for the pino and winston transports.
-- **Fits what you already use.** Works on its own, or as a transport for [pino](#pino) or [winston](#winston).
-- **Typed.** Written in TypeScript, with ESM and CommonJS builds.
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <h4>⚡ &nbsp;Fast</h4>
+      Lines are batched, 50 at a time or every 2 seconds. Your code never waits on the network.
+    </td>
+    <td width="33%" valign="top">
+      <h4>🛡️ &nbsp;Safe</h4>
+      A failed delivery is caught and dropped. Logging will never be the reason your app crashes.
+    </td>
+    <td width="33%" valign="top">
+      <h4>🪶 &nbsp;Lightweight</h4>
+      Delivery uses the built-in <code>fetch</code>. Only two tiny helpers for the transports.
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <h4>🔌 &nbsp;Pino &amp; Winston</h4>
+      Drop in as a transport and keep the logger you already use.
+    </td>
+    <td width="33%" valign="top">
+      <h4>🏷️ &nbsp;Context for free</h4>
+      Hostname, process ID and environment are added to every line automatically.
+    </td>
+    <td width="33%" valign="top">
+      <h4>🟦 &nbsp;Typed</h4>
+      Written in TypeScript, with ESM and CommonJS builds.
+    </td>
+  </tr>
+</table>
+
+<br>
 
 ## Install
 
@@ -145,4 +173,10 @@ const tailcove = new Tailcove({
 
 ## License
 
-[MIT](LICENSE) © Akcybex
+[MIT](LICENSE) © AKCybex
+
+<br>
+
+<p align="center">
+  <sub>Built by <a href="https://akcybex.com">AKCybex</a> &nbsp;·&nbsp; <a href="https://tailcove.dev">tailcove.dev</a></sub>
+</p>
