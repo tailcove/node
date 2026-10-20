@@ -1,25 +1,14 @@
-<picture>
+<a href="https://tailcove.dev/docs/sending-logs/node"><picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-light.svg">
-  <img alt="@tailcove/node: Tailcove for Node.js" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-dark.svg" width="100%">
-</picture>
+  <img alt="@tailcove/node: Tailcove for Node.js. Version, runtime support, size and license." src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-dark.svg" width="100%">
+</picture></a>
 
 <p align="center">
-  <a href="https://tailcove.dev/docs/sending-logs/node"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-docs-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-docs-light.svg"><img alt="Documentation" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-docs-dark.svg" height="40"></picture></a>
-  &nbsp;
-  <a href="https://app.tailcove.dev/register"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-start-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-start-light.svg"><img alt="Get started free" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-start-dark.svg" height="40"></picture></a>
-  &nbsp;
-  <a href="https://www.npmjs.com/package/@tailcove/node"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-npm-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-npm-light.svg"><img alt="View on npm" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-npm-dark.svg" height="40"></picture></a>
-  &nbsp;
-  <a href="https://github.com/tailcove/node/issues/new/choose"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-bug-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-bug-light.svg"><img alt="Report a bug" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-bug-dark.svg" height="40"></picture></a>
-</p>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/stats-node-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/stats-node-light.svg">
-    <img alt="@tailcove/node at a glance" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/stats-node-dark.svg">
-  </picture>
+  <a href="https://tailcove.dev/docs/sending-logs/node">Documentation</a> &nbsp;·&nbsp;
+  <a href="https://app.tailcove.dev/register">Get started free</a> &nbsp;·&nbsp;
+  <a href="https://www.npmjs.com/package/@tailcove/node">View on npm</a> &nbsp;·&nbsp;
+  <a href="https://github.com/tailcove/node/issues/new/choose">Report a bug</a>
 </p>
 
 <h3 align="center">Send logs from Node.js to Tailcove in two lines of code.</h3>
