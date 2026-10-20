@@ -5,18 +5,21 @@
 </picture>
 
 <p align="center">
-  <a href="https://tailcove.dev/docs/sending-logs/node"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-docs-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-docs-light.svg"><img alt="Documentation" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-docs-dark.svg" height="44"></picture></a>
+  <a href="https://tailcove.dev/docs/sending-logs/node"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-docs-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-docs-light.svg"><img alt="Documentation" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-docs-dark.svg" height="40"></picture></a>
   &nbsp;
-  <a href="https://app.tailcove.dev/register"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-start-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-start-light.svg"><img alt="Get started free" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-start-dark.svg" height="44"></picture></a>
+  <a href="https://app.tailcove.dev/register"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-start-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-start-light.svg"><img alt="Get started free" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-start-dark.svg" height="40"></picture></a>
   &nbsp;
-  <a href="https://github.com/tailcove/node/issues/new/choose"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-bug-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-bug-light.svg"><img alt="Report a bug" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-bug-dark.svg" height="44"></picture></a>
+  <a href="https://www.npmjs.com/package/@tailcove/node"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-npm-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-npm-light.svg"><img alt="View on npm" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-npm-dark.svg" height="40"></picture></a>
+  &nbsp;
+  <a href="https://github.com/tailcove/node/issues/new/choose"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-bug-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-bug-light.svg"><img alt="Report a bug" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/btn-bug-dark.svg" height="40"></picture></a>
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@tailcove/node"><img alt="npm version" src="https://img.shields.io/npm/v/@tailcove/node?label=%40tailcove%2Fnode&color=2DD4BF&labelColor=0A0A0A&style=flat-square"></a>
-  <img alt="Node.js 18+" src="https://img.shields.io/node/v/@tailcove/node?color=2DD4BF&labelColor=0A0A0A&style=flat-square">
-  <img alt="Types included" src="https://img.shields.io/badge/types-included-2DD4BF?labelColor=0A0A0A&style=flat-square">
-  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-2DD4BF?labelColor=0A0A0A&style=flat-square"></a>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/meta-node-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/meta-node-light.svg">
+    <img alt="@tailcove/node facts" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/meta-node-dark.svg" height="34">
+  </picture>
 </p>
 
 <h3 align="center">Send logs from Node.js to Tailcove in two lines of code.</h3>
