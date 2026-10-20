@@ -1,8 +1,4 @@
-<a href="https://tailcove.dev/docs/sending-logs/node"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-light.svg">
-  <img alt="@tailcove/node: Tailcove for Node.js. Version, runtime support, size and license." src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-dark.svg" width="100%">
-</picture></a>
+<a href="https://tailcove.dev/docs/sending-logs/node"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-light.svg"><img alt="@tailcove/node: Tailcove for Node.js. Version, runtime support, size and license." src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/node-dark.svg" width="100%"></picture></a>
 
 <p align="center">
   <a href="https://tailcove.dev/docs/sending-logs/node">Documentation</a> &nbsp;·&nbsp;
