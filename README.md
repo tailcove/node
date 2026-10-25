@@ -141,5 +141,5 @@ const tailcove = new Tailcove({
 </p>
 
 <p align="center">
-  <sub>More Tailcove libraries: <a href="https://github.com/tailcove/laravel">Laravel</a> &nbsp;·&nbsp; <a href="https://github.com/tailcove/python">Python</a> &nbsp;·&nbsp; <a href="https://github.com/tailcove/browser">Browser</a></sub>
+  <sub>More Tailcove libraries: <a href="https://github.com/tailcove/laravel">Laravel</a> &nbsp;·&nbsp; <a href="https://github.com/tailcove/python">Python</a> &nbsp;·&nbsp; <a href="https://github.com/tailcove/browser">Browser</a> &nbsp;·&nbsp; <a href="https://github.com/tailcove/agent">Agent</a></sub>
 </p>
