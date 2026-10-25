@@ -1,6 +1,6 @@
 {
     "name": "@tailcove/node",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Node.js client for shipping application logs to Tailcove — batches, ships NDJSON, with pino and winston transports.",
     "license": "MIT",
     "repository": {
