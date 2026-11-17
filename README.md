@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://tailcove.dev/docs/sending-logs/node">Documentation</a> &nbsp;·&nbsp;
-  <a href="https://app.tailcove.dev/register">Get started free</a> &nbsp;·&nbsp;
+  <a href="https://tailcove.dev/register">Get started free</a> &nbsp;·&nbsp;
   <a href="https://www.npmjs.com/package/@tailcove/node">View on npm</a> &nbsp;·&nbsp;
   <a href="https://github.com/tailcove/node/issues/new/choose">Report a bug</a>
 </p>
@@ -25,7 +25,7 @@ Requires Node.js 18 or newer.
 
 ## Quick start
 
-**1. Get a token.** Create a source in your [Tailcove dashboard](https://app.tailcove.dev) and copy its ingest token. It is shown only once, so save it somewhere safe (an environment variable is ideal).
+**1. Get a token.** Create a source in your [Tailcove dashboard](https://tailcove.dev) and copy its ingest token. It is shown only once, so save it somewhere safe (an environment variable is ideal).
 
 **2. Send your first log.**
 
@@ -135,7 +135,7 @@ const tailcove = new Tailcove({
 
 <p align="center">
   <a href="https://tailcove.dev/docs/sending-logs/node">Documentation</a> &nbsp;·&nbsp;
-  <a href="https://app.tailcove.dev/register">Get started free</a> &nbsp;·&nbsp;
+  <a href="https://tailcove.dev/register">Get started free</a> &nbsp;·&nbsp;
   <a href="https://github.com/tailcove/node/issues/new/choose">Report a bug</a> &nbsp;·&nbsp;
   <a href="LICENSE">MIT License</a>
 </p>
